@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:quran/settings/my_behaviour.dart';
 import 'package:quran/pages/home.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
+      scrollBehavior: MyBehaviour(),
       debugShowCheckedModeBanner: false,
-      home: MyApp(),
+      home: const MyApp(),
     ),
   );
 }

@@ -31,22 +31,19 @@ class ChapterListButton extends StatelessWidget {
                 SizedBox(
                   child: Row(
                     children: [
-                      Align( 
-                        alignment: Alignment.centerRight,
-                        child: SizedBox(
-                          height: 32,
-                          width: 32,
-                          child: Text(
-                            chapterNumber.toString(),
-                            style: TextStyle(
-                              fontSize: chapterNumber < 100 ? 25 : 20,
-                              color: Colors.white,
-                            ),
+                      SizedBox(
+                        height: 32,
+                        width: 32,
+                        child: Text(
+                          chapterNumber.toString(),
+                          style: TextStyle(
+                            fontSize: chapterNumber < 100 ? 25 : 20,
+                            color: Colors.white,
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 15.0),
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: Column(
                           children: [
                             Text(
@@ -70,6 +67,7 @@ class ChapterListButton extends StatelessWidget {
                   ),
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
                       arabicName,
