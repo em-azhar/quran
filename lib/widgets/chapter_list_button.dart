@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quran/pages/chapter_page.dart';
 
 class ChapterListButton extends StatelessWidget {
   final int chapterNumber;
@@ -7,6 +8,8 @@ class ChapterListButton extends StatelessWidget {
   final int totalVerses;
   final String arabicName;
   final String type;
+
+  // final Function onPressed;
   const ChapterListButton({
     super.key,
     required this.chapterNumber,
@@ -14,6 +17,7 @@ class ChapterListButton extends StatelessWidget {
     required this.totalVerses,
     required this.arabicName,
     required this.type,
+    // required this.onPressed,
   });
 
   @override
@@ -23,8 +27,15 @@ class ChapterListButton extends StatelessWidget {
       child: Column(
         children: [
           CupertinoButton(
+            pressedOpacity: 0,
             padding: const EdgeInsets.all(1),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ChapterPage(chapterNumber: chapterNumber),
+                ),
+              );
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
